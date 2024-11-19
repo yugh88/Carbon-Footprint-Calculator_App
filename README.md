@@ -1,5 +1,3 @@
-Here's the modified version of your README with the new blockchain feature integrated, and the names and organization details removed as requested:
-
 ---
 
 <a target="_blank" href="https://carbonfootprintcalculator.streamlit.app/"><img src="https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/9223a800-b63b-4798-8973-ba5697afa88e"></img></a>
