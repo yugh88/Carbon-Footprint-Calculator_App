@@ -1,10 +1,15 @@
+Here's the modified version of your README with the new blockchain feature integrated, and the names and organization details removed as requested:
+
+---
 
 <a target="_blank" href="https://carbonfootprintcalculator.streamlit.app/"><img src="https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/9223a800-b63b-4798-8973-ba5697afa88e"></img></a>
 
 ## 🌳About Carbon Footprint Calculator Project🌳
 
 The global annual carbon footprint has now surpassed an alarming 40 billion tons, underscoring the urgent need for collective action to mitigate climate change. There exists a direct and undeniable correlation between the daily habits of individuals and the surge in CO2 emissions. Everyday practices, ranging from energy consumption and transportation to residential heating-cooling systems and food production-consumption, significantly contribute to this escalating environmental challenge. Recognizing the pivotal role individuals play in this scenario, it becomes imperative to foster awareness regarding their impact on the global increase in CO2 levels. The core objective of the project is to empower individuals by helping them calculate their monthly carbon footprint. By incorporating considerations of daily, weekly, and monthly habits and lifestyle choices, the initiative aims to offer personalized insights. Furthermore, the project is geared towards not only raising awareness but also providing practical recommendations for individuals to actively reduce their carbon footprints. Through these efforts, the goal is to encourage sustainable living practices that contribute to a more environmentally conscious and responsible global community.
+
 ## 🛠️Project Steps
+
 #### 🧩Backend Development:
 1. **Data Handling with Pandas:**
    - Used Pandas for data manipulation and analysis.
@@ -30,16 +35,28 @@ The global annual carbon footprint has now surpassed an alarming 40 billion tons
 #### 🖥️Frontend Development:
 
 1. **Streamlit Setup:**
-   - Used Streamlit for creating web application.
+   - Used Streamlit for creating the web application.
 
 2. **User Interface Design:**
-   - Designed an intuitive user interface using Streamlit components, CSS and Javascript.
+   - Designed an intuitive user interface using Streamlit components, CSS, and JavaScript.
 
 3. **Testing:**
    - Tested the complete application to ensure that both the backend and frontend components are functioning correctly.
 
+#### 🧩Blockchain Integration:
+
+1. **Blockchain Interaction:**
+   - Full integration of the carbon footprint calculator logic with blockchain interactions.
+   - The application retains all the original features (data gathering, model prediction).
+   - Blockchain records the results and stores user input for future retrieval and tracking.
+
+2. **User Input & Blockchain Calls:**
+   - Blockchain calls are tied to the user's inputs, ensuring that carbon footprint data is securely recorded and immutable.
+   - Users can interact with the blockchain via buttons in the UI to record and retrieve data.
+
 ## 👩‍🏫How to use
-Firstly, enter https://carbonfootprintcalculator.streamlit.app/. If the app is asleep due to Streamlit's policy, please wait a few moments for it to wake up.
+
+Firstly, enter [https://carbonfootprintcalculator.streamlit.app/](https://carbonfootprintcalculator.streamlit.app/). If the app is asleep due to Streamlit's policy, please wait a few moments for it to wake up.
 
 Click to:
 
@@ -50,6 +67,7 @@ Once on the page, you'll find five tabs. Begin by filling out the form as shown 
 ![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/d052317d-30d0-41bd-bf11-df4768e7e682)
 
 After completing the form, navigate to the 'Consumption' tab and click on the designated button, as indicated in the image:
+
 ![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/4b256b3e-36a1-47bf-8774-e14a590a528e)
 
 This will display your Monthly Carbon Footprint as an image, as shown here:
@@ -61,41 +79,6 @@ If you wish to offset your carbon footprint, you can proceed by donating trees t
 ![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/d582a3a0-8c76-438c-bff3-3e0f33c99141)
 
 
+---
 
-## 👨‍👩‍👧‍👦Team Members 
-
-- ### 🙋‍♂️Burhan Yıldız
-
-<a target="_blank" href="https://www.linkedin.com/in/burhanyildiz/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="https://www.kaggle.com/yldzburhan"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></img></a>
-<a target="_blank" href="https://medium.com/@yildizburhan"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></img></a>
-
-
-- ### 🙋‍♀️Ecem Bayındır
-
-<a target="_blank" href="https://www.linkedin.com/in/ecembayindir/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="https://www.kaggle.com/ecembayindir"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></img></a>
-<a target="_blank" href="https://medium.com/@ecembayindir"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></img></a>
-
-- ### 🙋‍♂️Hüseyin Baytar
-
-<a target="_blank" href="https://www.linkedin.com/in/huseyinbaytar/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="https://www.kaggle.com/huseyinbaytar"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></img></a>
-<a target="_blank" href="https://medium.com/@huseyinbaytar"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></img></a>
-
-- ### 🙋‍♀️Serap Gülasar
-
-<a target="_blank" href="https://www.linkedin.com/in/serap-gülasar/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="https://www.kaggle.com/serapgulasar"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></img></a>
-<a target="_blank" href="https://medium.com/@serapgulasar99"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></img></a>
-
-- ### 🙋‍♂️Mesut Duman
-
-<a target="_blank" href="https://www.linkedin.com/in/mesut-duman/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="https://www.kaggle.com/dumanmesut"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></img></a>
-<a target="_blank" href="https://medium.com/@dumanmesut"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></img></a>
-
-## 📺Project Presentation
-
-https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/657285e0-eded-4296-8937-fd2d22f7aeef
-
+Let me know if you need further modifications or adjustments!
