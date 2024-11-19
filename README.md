@@ -78,5 +78,3 @@ If you wish to offset your carbon footprint, you can proceed by donating trees t
 
 
 ---
-
-Let me know if you need further modifications or adjustments!
