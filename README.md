@@ -100,9 +100,11 @@ This project now integrates blockchain technology to record and retrieve the use
 
 ## 👨‍👩‍👧‍👦 Team Members:
 
-- [LinkedIn](https://www.linkedin.com/in/yourusername/)
-- [Kaggle](https://www.kaggle.com/yourusername)
-- [Medium](https://medium.com/@yourusername)
+-Yugh Juneja 
+-Shubhdeep Singh
+-Aditya Singh
+-Aryan Pandey
+-Mansi Kapse
 
 ## 📺 Project Presentation
 
