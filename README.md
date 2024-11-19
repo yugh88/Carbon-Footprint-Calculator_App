@@ -112,4 +112,4 @@ This project now integrates blockchain technology to record and retrieve the use
 
 ---
 
-This updated README reflects the integration of blockchain and includes the necessary setup commands, as well as the tech stack used in the project.
+
