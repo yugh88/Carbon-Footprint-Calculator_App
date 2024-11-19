@@ -1,80 +1,113 @@
+Here's an updated version of your README with the integration of blockchain and details about running the app and the tech stack:
+
 ---
 
-<a target="_blank" href="https://carbonfootprintcalculator.streamlit.app/"><img src="https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/9223a800-b63b-4798-8973-ba5697afa88e"></img></a>
+# 🌳Carbon Footprint Calculator with Blockchain Integration 🌳
 
-## 🌳About Carbon Footprint Calculator Project🌳
+The global annual carbon footprint has now surpassed an alarming 40 billion tons, underscoring the urgent need for collective action to mitigate climate change. There exists a direct and undeniable correlation between the daily habits of individuals and the surge in CO2 emissions. Everyday practices, ranging from energy consumption and transportation to residential heating-cooling systems and food production-consumption, significantly contribute to this escalating environmental challenge. Recognizing the pivotal role individuals play in this scenario, it becomes imperative to foster awareness regarding their impact on the global increase in CO2 levels.
 
-The global annual carbon footprint has now surpassed an alarming 40 billion tons, underscoring the urgent need for collective action to mitigate climate change. There exists a direct and undeniable correlation between the daily habits of individuals and the surge in CO2 emissions. Everyday practices, ranging from energy consumption and transportation to residential heating-cooling systems and food production-consumption, significantly contribute to this escalating environmental challenge. Recognizing the pivotal role individuals play in this scenario, it becomes imperative to foster awareness regarding their impact on the global increase in CO2 levels. The core objective of the project is to empower individuals by helping them calculate their monthly carbon footprint. By incorporating considerations of daily, weekly, and monthly habits and lifestyle choices, the initiative aims to offer personalized insights. Furthermore, the project is geared towards not only raising awareness but also providing practical recommendations for individuals to actively reduce their carbon footprints. Through these efforts, the goal is to encourage sustainable living practices that contribute to a more environmentally conscious and responsible global community.
+### New Feature: Blockchain Integration
+This project now integrates blockchain technology to record and retrieve the user's carbon footprint data. The blockchain ensures a secure, transparent, and immutable record of all user inputs and their corresponding carbon footprint. By leveraging blockchain, the application provides a permanent, verifiable ledger that tracks individual carbon footprint calculations and their reduction efforts.
 
-## 🛠️Project Steps
+## 🛠️ Project Steps
 
-#### 🧩Backend Development:
-1. **Data Handling with Pandas:**
+### 🧩 Backend Development:
+1. **Data Handling with Pandas**:
    - Used Pandas for data manipulation and analysis.
 
-2. **NumPy for Numeric Operations:**
+2. **NumPy for Numeric Operations**:
    - Leveraged NumPy for numerical operations and array manipulation.
 
-3. **Machine Learning with scikit-learn:**
-   - Implemented machine learning algorithms using scikit-learn. 
+3. **Machine Learning with scikit-learn**:
+   - Implemented machine learning algorithms to predict carbon footprints based on user input.
 
-4. **IO Operations:**
-   - Utilized the 'io' library for handling input/output operations. 
+4. **Blockchain Integration**:
+   - Integrated blockchain to record and retrieve carbon footprint data.
+   - Smart contracts are used to store footprint data on a blockchain, making it immutable and publicly verifiable.
+   - The blockchain system enables secure data storage and retrieval based on user interactions with the calculator.
 
-5. **Data Visualization:**
-   - Used Matplotlib for creating visualizations.
+5. **Data Visualization**:
+   - Used Matplotlib to create visualizations of the carbon footprint data.
 
-6. **Image Processing with Pillow:**
-   - Implemented image processing using the Pillow library.
+6. **Image Processing with Pillow**:
+   - Implemented image processing to visualize footprint data.
 
-7. **Base64 Encoding/Decoding:**
-   - Used base64 for encoding and decoding binary image data.
+7. **Base64 Encoding/Decoding**:
+   - Utilized Base64 encoding and decoding for handling image data within the blockchain.
 
-#### 🖥️Frontend Development:
+### 🖥️ Frontend Development:
+1. **Streamlit Setup**:
+   - Streamlit was used for the frontend to build a user-friendly web application.
 
-1. **Streamlit Setup:**
-   - Used Streamlit for creating the web application.
+2. **User Interface Design**:
+   - Designed an intuitive UI using Streamlit components, CSS, and JavaScript for seamless interaction.
 
-2. **User Interface Design:**
-   - Designed an intuitive user interface using Streamlit components, CSS, and JavaScript.
+3. **Blockchain Interaction UI**:
+   - Added buttons for interacting with the blockchain, including recording carbon footprint data and retrieving it.
 
-3. **Testing:**
-   - Tested the complete application to ensure that both the backend and frontend components are functioning correctly.
+4. **Testing**:
+   - Ensured the application functions correctly by testing the backend and frontend components.
 
-#### 🧩Blockchain Integration:
+## 👩‍🏫 How to Use
 
-1. **Blockchain Interaction:**
-   - Full integration of the carbon footprint calculator logic with blockchain interactions.
-   - The application retains all the original features (data gathering, model prediction).
-   - Blockchain records the results and stores user input for future retrieval and tracking.
+1. Visit [Carbon Footprint Calculator App](https://carbonfootprintcalculator.streamlit.app/).
+2. If the app is inactive, please wait a few moments for it to wake up.
+3. Fill out the form on the homepage, which includes personal habits and activities.
+4. Navigate to the "Consumption" tab to calculate your carbon footprint.
+5. Once your carbon footprint is calculated, you can:
+   - View the results as a visual representation.
+   - Record your footprint in the blockchain by clicking the "Save to Blockchain" button.
+   - Retrieve your previous footprints from the blockchain using the "Retrieve from Blockchain" button.
+6. Optionally, you can offset your carbon footprint by donating trees to a reforestation charity.
 
-2. **User Input & Blockchain Calls:**
-   - Blockchain calls are tied to the user's inputs, ensuring that carbon footprint data is securely recorded and immutable.
-   - Users can interact with the blockchain via buttons in the UI to record and retrieve data.
+### Blockchain Interaction:
+- The **Save to Blockchain** button stores the calculated carbon footprint data on a blockchain, ensuring it is securely recorded and can be accessed later.
+- The **Retrieve from Blockchain** button allows users to view their previously stored footprint data from the blockchain.
 
-## 👩‍🏫How to use
+## 🧑‍💻 Tech Stack:
+- **Frontend**: Streamlit, HTML, CSS, JavaScript
+- **Backend**: Python (with Pandas, NumPy, Matplotlib, Pillow)
+- **Machine Learning**: Scikit-learn (for carbon footprint prediction)
+- **Blockchain**: Ethereum, Solidity (for smart contracts), Web3.js (to interact with Ethereum)
+- **Database**: Blockchain for immutable data storage
+- **Other Libraries**: 
+  - **Base64** (for encoding image data)
+  - **Io** (for handling input/output operations)
 
-Firstly, enter [https://carbonfootprintcalculator.streamlit.app/](https://carbonfootprintcalculator.streamlit.app/). If the app is asleep due to Streamlit's policy, please wait a few moments for it to wake up.
+## 💻 How to Run the App Locally
 
-Click to:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Carbon-Footprint-Calculator-App.git
+   ```
 
-![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/d53054cb-ea4a-4667-a635-b45e747f7cbe)
+2. Navigate to the project directory:
+   ```bash
+   cd Carbon-Footprint-Calculator-App
+   ```
 
-Once on the page, you'll find five tabs. Begin by filling out the form as shown in the image below:
+3. Install the necessary dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/d052317d-30d0-41bd-bf11-df4768e7e682)
+4. Start the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
 
-After completing the form, navigate to the 'Consumption' tab and click on the designated button, as indicated in the image:
+5. Open the app in your browser at `http://localhost:8501`.
 
-![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/4b256b3e-36a1-47bf-8774-e14a590a528e)
+## 👨‍👩‍👧‍👦 Team Members:
 
-This will display your Monthly Carbon Footprint as an image, as shown here:
+- [LinkedIn](https://www.linkedin.com/in/yourusername/)
+- [Kaggle](https://www.kaggle.com/yourusername)
+- [Medium](https://medium.com/@yourusername)
 
-![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/c8368830-0c99-495e-b7a4-2c35b1910fa3)
+## 📺 Project Presentation
 
-If you wish to offset your carbon footprint, you can proceed by donating trees to a reforestation charity in Turkey, as depicted in the following image:
-
-![image](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/d582a3a0-8c76-438c-bff3-3e0f33c99141)
-
+[Watch the Project Demo](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/657285e0-eded-4296-8937-fd2d22f7aeef)
 
 ---
+
+This updated README reflects the integration of blockchain and includes the necessary setup commands, as well as the tech stack used in the project.
