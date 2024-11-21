@@ -1,9 +1,96 @@
-from streamlit.components.v1 import html
+import streamlit as st
+import pandas as pd
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 import matplotlib.pyplot as plt
 import io
-import pandas as pd
+
+def component():
+    """
+    Creates an input form for carbon footprint calculation
+    
+    Returns:
+        pd.DataFrame: User input data for carbon footprint calculation
+    """
+    # Personal Information
+    body_type = st.selectbox("Body Type", ['underweight', 'normal', 'overweight', 'obese'])
+    sex = st.selectbox("Sex", ['female', 'male'])
+    
+    # Shower and Social Activity
+    shower_frequency = st.selectbox("How Often Do You Shower", ['less frequently', 'daily', "twice a day", "more frequently"])
+    social_activity = st.selectbox("Social Activity", ['never', 'sometimes', "often"])
+    
+    # Travel
+    air_travel_freq = st.selectbox("Frequency of Traveling by Air", ['never', 'rarely', "frequently", "very frequently"])
+    monthly_vehicle_distance = st.number_input("Monthly Vehicle Distance (km)", min_value=0, value=0)
+    
+    # Waste
+    waste_bag_size = st.selectbox("Waste Bag Size", ['small', 'medium', "large", "extra large"])
+    waste_bag_count = st.number_input("Waste Bag Weekly Count", min_value=0, value=0)
+    
+    # Energy and Electronics
+    tv_daily_hours = st.number_input("Daily TV/PC Hours", min_value=0.0, value=0.0, step=0.5)
+    internet_daily_hours = st.number_input("Daily Internet Hours", min_value=0.0, value=0.0, step=0.5)
+    
+    # Clothing and Consumption
+    new_clothes_monthly = st.number_input("New Clothes per Month", min_value=0, value=0)
+    monthly_grocery_bill = st.number_input("Monthly Grocery Bill ($)", min_value=0.0, value=0.0)
+    
+    # Diet
+    diet = st.selectbox("Diet", ['omnivore', 'pescatarian', 'vegan', 'vegetarian'])
+    
+    # Energy Efficiency and Recycling
+    energy_efficiency = st.selectbox("Energy Efficiency", ['No', 'Sometimes', "Yes"])
+    recycling = st.multiselect("What Do You Recycle?", ['Paper', 'Plastic', 'Glass', 'Metal'])
+    
+    # Cooking Methods
+    cooking_methods = st.multiselect("Cooking Methods", ['stove', 'oven', 'microwave', 'grill', 'airfryer'])
+    
+    # Transportation
+    transport_mode = st.selectbox("Primary Transport Mode", ['private', 'public', 'walk/bicycle'])
+    vehicle_type = st.selectbox("Vehicle Type", ['None', 'diesel', 'electric', 'hybrid', 'lpg', 'petrol'])
+    
+    # Heating Energy Source
+    heating_source = st.selectbox("Heating Energy Source", ['coal', 'electricity', 'natural gas', 'wood'])
+    
+    # Prepare data for model
+    data = {
+        'Body Type': body_type,
+        'Sex': sex,
+        'How Often Shower': shower_frequency,
+        'Social Activity': social_activity,
+        'Monthly Grocery Bill': monthly_grocery_bill,
+        'Frequency of Traveling by Air': air_travel_freq,
+        'Vehicle Monthly Distance Km': monthly_vehicle_distance,
+        'Waste Bag Size': waste_bag_size,
+        'Waste Bag Weekly Count': waste_bag_count,
+        'How Long TV PC Daily Hour': tv_daily_hours,
+        'How Many New Clothes Monthly': new_clothes_monthly,
+        'How Long Internet Daily Hour': internet_daily_hours,
+        'Energy efficiency': energy_efficiency,
+        'Diet': diet,
+        'Heating Energy Source': heating_source,
+        'Transport': transport_mode,
+        'Vehicle Type': vehicle_type
+    }
+    
+    # Add recycling columns
+    for recycle_type in ['Paper', 'Plastic', 'Glass', 'Metal']:
+        data[f'Do You Recyle_{recycle_type}'] = 1 if recycle_type in recycling else 0
+    
+    # Add cooking method columns
+    for method in ['stove', 'oven', 'microwave', 'grill', 'airfryer']:
+        data[f'Cooking_with_{method}'] = 1 if method in cooking_methods else 0
+    
+    # Submit button
+    if st.button("Calculate Carbon Footprint"):
+        return pd.DataFrame([data])
+    
+    return pd.DataFrame([sample])  # Return sample data if not submitted
+
+# Rest of your existing functions remain the same (input_preprocessing, hesapla, chart, etc.)
+# Import necessary libraries and other code
+
 def click_element(element):
     open_script = f"<script type = 'text/javascript'>window.parent.document.querySelector('[id^=tabs-bui][id$=-{element}]').click();</script>"
     html(open_script, width=0, height=0)
@@ -76,6 +163,7 @@ def input_preprocessing(data):
     data["Waste Bag Size"] = data["Waste Bag Size"].map({'small':0, 'medium':1, "large":2,  "extra large":3})
     data["Energy efficiency"] = data["Energy efficiency"].map({'No':0, 'Sometimes':1, "Yes":2})
     return data
+
 def hesapla(model,ss, sample_df):
     copy_df = sample_df.copy()
     travels = copy_df[["Frequency of Traveling by Air",
@@ -170,12 +258,8 @@ def chart(model, scaler,sample_df, prediction):
     piechart.paste(ayak, (x, y), ayak.convert('RGBA'))
     background.paste(piechart, (40, 200), piechart.convert('RGBA'))
     data2 = io.BytesIO()
-    background.save(data2, "PNG")
+    background.save(data2, format="PNG")
     background = Image.open(data2).resize((700, 700))
     data3 = io.BytesIO()
     background.save(data3, "PNG")
     return data3
-
-
-
-
