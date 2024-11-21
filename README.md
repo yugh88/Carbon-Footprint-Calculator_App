@@ -1,5 +1,3 @@
-Here's an updated version of your README with the integration of blockchain and details about running the app and the tech stack:
-
 ---
 
 # 🌳Carbon Footprint Calculator with Blockchain Integration 🌳
@@ -102,7 +100,7 @@ This project now integrates blockchain technology to record and retrieve the use
 
 -Yugh Juneja 
 -Shubhdeep Singh
--Aditya Singh
+-Aditya Raj
 -Aryan Pandey
 -Mansi Kapse
 
@@ -111,7 +109,3 @@ This project now integrates blockchain technology to record and retrieve the use
 [Watch the Project Demo](https://github.com/user-attachments/assets/de46832c-132b-4bae-a70b-4685138fbffa)
 
 ---
-
-
-
-
