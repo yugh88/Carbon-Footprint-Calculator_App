@@ -108,8 +108,10 @@ This project now integrates blockchain technology to record and retrieve the use
 
 ## 📺 Project Presentation
 
-[Watch the Project Demo](https://github.com/mesutdmn/Carbon-Footprint-Calculator-App/assets/72805471/657285e0-eded-4296-8937-fd2d22f7aeef)
+[Watch the Project Demo](https://github.com/user-attachments/assets/de46832c-132b-4bae-a70b-4685138fbffa)
 
 ---
+
+
 
 
