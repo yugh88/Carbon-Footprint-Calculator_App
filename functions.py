@@ -154,16 +154,41 @@ sample = {'Body Type': 2,
  'Vehicle Type_petrol': 0}
 
 def input_preprocessing(data):
-    data["Body Type"] = data["Body Type"].map({'underweight':0, 'normal':1, 'overweight':2, 'obese':3})
-    data["Sex"] = data["Sex"].map({'female':0, 'male':1})
-    data = pd.get_dummies(data, columns=["Diet","Heating Energy Source","Transport","Vehicle Type"], dtype=int)
-    data["How Often Shower"] = data["How Often Shower"].map({'less frequently':0, 'daily':1, "twice a day":2, "more frequently":3})
-    data["Social Activity"] = data["Social Activity"].map({'never':0, 'sometimes':1, "often":2})
-    data["Frequency of Traveling by Air"] = data["Frequency of Traveling by Air"].map({'never':0, 'rarely':1, "frequently":2, "very frequently":3})
-    data["Waste Bag Size"] = data["Waste Bag Size"].map({'small':0, 'medium':1, "large":2,  "extra large":3})
-    data["Energy efficiency"] = data["Energy efficiency"].map({'No':0, 'Sometimes':1, "Yes":2})
-    return data
-
+    # Create a copy of the input data to avoid modifying the original
+    processed_data = data.copy()
+    
+    # Map specific columns first
+    processed_data["Body Type"] = processed_data["Body Type"].map({'underweight':0, 'normal':1, 'overweight':2, 'obese':3})
+    processed_data["Sex"] = processed_data["Sex"].map({'female':0, 'male':1})
+    
+    # One-hot encode categorical variables
+    categorical_columns = {
+        'Diet': ['omnivore', 'pescatarian', 'vegan', 'vegetarian'],
+        'Heating Energy Source': ['coal', 'electricity', 'natural gas', 'wood'],
+        'Transport': ['private', 'public', 'walk/bicycle'],
+        'Vehicle Type': ['None', 'diesel', 'electric', 'hybrid', 'lpg', 'petrol']
+    }
+    
+    for col, categories in categorical_columns.items():
+        # Drop existing one-hot columns if they exist
+        col_names_to_drop = [f"{col}_{cat}" for cat in categories]
+        processed_data = processed_data.drop(columns=[c for c in col_names_to_drop if c in processed_data.columns], errors='ignore')
+        
+        # Create one-hot encoded columns
+        for cat in categories:
+            processed_data[f"{col}_{cat}"] = (processed_data[col] == cat).astype(int)
+        
+        # Drop the original categorical column
+        processed_data = processed_data.drop(columns=[col])
+    
+    # Additional mappings
+    processed_data["How Often Shower"] = processed_data["How Often Shower"].map({'less frequently':0, 'daily':1, "twice a day":2, "more frequently":3})
+    processed_data["Social Activity"] = processed_data["Social Activity"].map({'never':0, 'sometimes':1, "often":2})
+    processed_data["Frequency of Traveling by Air"] = processed_data["Frequency of Traveling by Air"].map({'never':0, 'rarely':1, "frequently":2, "very frequently":3})
+    processed_data["Waste Bag Size"] = processed_data["Waste Bag Size"].map({'small':0, 'medium':1, "large":2,  "extra large":3})
+    processed_data["Energy efficiency"] = processed_data["Energy efficiency"].map({'No':0, 'Sometimes':1, "Yes":2})
+    
+    return processed_data
 def hesapla(model,ss, sample_df):
     copy_df = sample_df.copy()
     travels = copy_df[["Frequency of Traveling by Air",
