@@ -48,7 +48,7 @@ This project now integrates blockchain technology to record and retrieve the use
 
 ## 👩‍🏫 How to Use
 
-1. Visit [Carbon Footprint Calculator App](https://carbonfootprintcalculator.streamlit.app/).
+1. Visit [Carbon Footprint Calculator App]
 2. If the app is inactive, please wait a few moments for it to wake up.
 3. Fill out the form on the homepage, which includes personal habits and activities.
 4. Navigate to the "Consumption" tab to calculate your carbon footprint.
